@@ -19,6 +19,80 @@ namespace ContractManagementSystem
             InitializeComponent();
         }
 
+        public int workid;
+        private void Form_AddWork_Load(object sender, EventArgs e)
+        {
+            fillCombo();
+
+        }
+        public void fillCombo()
+        {
+            try
+            {
+
+                string sql = "SELECT name, id FROM work_types";
+                MySqlConnection conn = GetConnection();
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.CommandType = CommandType.Text;
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    cmType.Items.Add(reader["name"].ToString());
+                    cmType.ValueMember = reader["id"].ToString();
+                    cmType.DisplayMember = reader["name"].ToString();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Error ");
+            }
+        }
+        public static MySqlConnection GetConnection()
+        {
+            string sql = "datasource=localhost;port=3306;username=root;password=;database=cms";
+            MySqlConnection conn = new MySqlConnection(sql);
+
+            try
+            {
+                conn.Open();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return conn;
+        }
+
+        public int findId(string name)
+        {
+            string sql = "SELECT id FROM work_types WHERE name = @name";
+
+            MySqlConnection conn = GetConnection();
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@name", MySqlDbType.Text).Value = name;
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            string id = "0";
+            while (reader.Read())
+            {
+                id = reader["id"].ToString();
+            }
+
+            workid = Convert.ToInt32(id);
+            conn.Close();
+
+
+            return workid;
+
+        }
         private void btnSaveWork_Click(object sender, EventArgs e)
         {
             if(txtWorkTitle.Text.Trim().Length < 1)
@@ -66,80 +140,6 @@ namespace ContractManagementSystem
             this.Close();
 
         }
-        public static MySqlConnection GetConnection()
-        {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=cms";
-            MySqlConnection conn = new MySqlConnection(sql);
-
-            try
-            {
-                conn.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return conn;
-        }
-        public int workid;
-
-        public int findId(string name)
-        {
-            string sql = "SELECT id FROM work_types WHERE name = @name";
-
-            MySqlConnection conn = GetConnection();
-
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("@name", MySqlDbType.Text).Value = name;
-
-            MySqlDataReader reader = cmd.ExecuteReader();
-
-            string id="0";
-            while (reader.Read())
-            {
-               id= reader["id"].ToString();
-            }
-
-            workid = Convert.ToInt32(id);
-            conn.Close();
-
-
-            return workid;
-            
-        }
-        public void fillCombo()
-        {
-            try
-            {
-                
-                string sql = "SELECT name, id FROM work_types";
-                MySqlConnection conn = GetConnection();
-
-                MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                cmd.CommandType = CommandType.Text;
-
-                MySqlDataReader reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    cmType.Items.Add(reader["name"].ToString());
-                    cmType.ValueMember = reader["id"].ToString();
-                    cmType.DisplayMember = reader["name"].ToString();
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error ");
-            }
-        }
-
-        private void Form_AddWork_Load(object sender, EventArgs e)
-        {
-            fillCombo();
-
-        }
+         
     }
 }
