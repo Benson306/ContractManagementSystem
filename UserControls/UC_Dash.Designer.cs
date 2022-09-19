@@ -35,7 +35,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(397, 276);
+            this.label1.Location = new System.Drawing.Point(397, 282);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 32);
             this.label1.TabIndex = 0;
@@ -48,7 +48,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.label1);
             this.Name = "UC_Dash";
-            this.Size = new System.Drawing.Size(923, 629);
+            this.Size = new System.Drawing.Size(923, 597);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -16,5 +16,11 @@ namespace ContractManagementSystem.UserControls
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form_AddWork wrk = new Form_AddWork();
+            wrk.ShowDialog();
+        }
     }
 }
