@@ -68,12 +68,26 @@ namespace ContractManagementSystem
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Work Has benn Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Work Has been Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show("Student Not Added! \n" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            conn.Close();
+
+        }
+
+        public static void DisplayAndSearchWork(string query, DataGridView dgv)
+        {
+            string sql = query;
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataAdapter dp = new MySqlDataAdapter(cmd);
+
+            DataTable tbl = new DataTable();
+            dp.Fill(tbl);
+            dgv.DataSource = tbl;
             conn.Close();
 
         }
