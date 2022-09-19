@@ -49,5 +49,16 @@ namespace ContractManagementSystem
             UC_Contractors contractors = new UC_Contractors();
             addUserControls(contractors);
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("T");
+        }
+
+        private void Dashboard_Load_1(object sender, EventArgs e)
+        {
+            lblUser.Text = LoginInfo.userName;
+            timer1.Start();
+        }
     }
 }
