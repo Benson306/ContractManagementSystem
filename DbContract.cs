@@ -43,7 +43,8 @@ namespace ContractManagementSystem
             if (reader.HasRows)
             {
                 LoginInfo.userName = usr.username;
-               
+                Form1 frm = new Form1();
+                frm.Hide();
                 using(Dashboard ds = new Dashboard())
                 {
                     ds.ShowDialog();
