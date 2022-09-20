@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -13,7 +14,7 @@ namespace ContractManagementSystem
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=cms";
+            string sql = "datasource=sql8.freemysqlhosting.net;port=3306;username=sql8521009;password=Q9gQ1Ha7Ak;database=sql8521009";
             MySqlConnection conn = new MySqlConnection(sql);
 
             try
@@ -26,6 +27,7 @@ namespace ContractManagementSystem
             }
             return conn;
         }
+
         public static void login(Users usr)
         {
             string sql = "SELECT * FROM users WHERE username = @username AND password = @password";
@@ -57,6 +59,7 @@ namespace ContractManagementSystem
             }
             conn.Close();
         }
+
         public static void addWork(Work work)
         {
             string sql = "INSERT INTO works VALUES (NULL, @title, @location, @ts_number, @ts_amount, @type_id)";
@@ -94,6 +97,44 @@ namespace ContractManagementSystem
             dgv.DataSource = tbl;
             conn.Close();
 
+        }
+
+        public static void addContractor(Contractor ct)
+        {
+            string sql = "INSERT INTO contractors VALUES (NULL, @full_name, @address)";
+
+            MySqlConnection conn = GetConnection();
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add("@full_name", MySqlDbType.Text).Value = ct.full_name;
+            cmd.Parameters.Add("@address", MySqlDbType.Text).Value = ct.address;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Contractor Has been Added","Information",MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.Close();
+        }
+
+        public static void DisplayAndSearchContractor(string query, DataGridView dgv)
+        {
+            string sql = query;
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            MySqlDataAdapter dp = new MySqlDataAdapter(cmd);
+
+            DataTable tbl = new DataTable();
+            dp.Fill(tbl);
+            dgv.DataSource = tbl;
+            conn.Close();
         }
 
     }
