@@ -32,7 +32,7 @@ namespace ContractManagementSystem
             {
 
                 string sql = "SELECT name, id FROM work_types";
-                MySqlConnection conn = GetConnection();
+                MySqlConnection conn = DbContract.GetConnection();
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
 
@@ -52,27 +52,12 @@ namespace ContractManagementSystem
                 MessageBox.Show("Error ");
             }
         }
-        public static MySqlConnection GetConnection()
-        {
-            string sql = "datasource=localhost;port=3306;username=root;password=;database=cms";
-            MySqlConnection conn = new MySqlConnection(sql);
-
-            try
-            {
-                conn.Open();
-            }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            return conn;
-        }
 
         public int findId(string name)
         {
             string sql = "SELECT id FROM work_types WHERE name = @name";
 
-            MySqlConnection conn = GetConnection();
+            MySqlConnection conn = DbContract.GetConnection();
 
             MySqlCommand cmd = new MySqlCommand(sql, conn);
 
