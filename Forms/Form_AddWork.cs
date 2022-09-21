@@ -1,4 +1,5 @@
 ﻿using ContractManagementSystem.Classes;
+using ContractManagementSystem.UserControls;
 using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using System;
@@ -15,12 +16,15 @@ namespace ContractManagementSystem
 {
     public partial class Form_AddWork : Form
     {
-        public Form_AddWork()
+        private readonly UC_Work _parent;
+        public Form_AddWork(UC_Work parent)
         {
             InitializeComponent();
+            _parent = parent;
         }
 
         public int workid;
+
         private void Form_AddWork_Load(object sender, EventArgs e)
         {
             fillCombo();
@@ -112,12 +116,8 @@ namespace ContractManagementSystem
 
             Work work = new Work(txtWorkTitle.Text, txtLocation.Text, txtTsNumber.Text, txtTsAmount.Text, type_id);
             DbContract.addWork(work);
-
-            txtLocation.Text ="";
-            txtWorkTitle.Text = "";
-            txtTsNumber.Text = "";
-            txtTsAmount.Text = "";
-            cmType.Text = "";
+            _parent.Display();
+            this.Close();
 
         }
 

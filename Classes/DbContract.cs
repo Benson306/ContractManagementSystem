@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Bcpg.OpenPgp;
 using System;
 using System.Collections.Generic;
@@ -62,7 +63,7 @@ namespace ContractManagementSystem.Classes
 
         public static void addWork(Work work)
         {
-            string sql = "INSERT INTO works VALUES (NULL, @title, @location, @ts_number, @ts_amount, @type_id)";
+            string sql = "INSERT INTO works VALUES (NULL, @title, @location, @ts_number, @ts_amount, @work_assigned, @type_id)";
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.CommandType = CommandType.Text;
@@ -70,12 +71,14 @@ namespace ContractManagementSystem.Classes
             cmd.Parameters.Add("@location", MySqlDbType.Text).Value = work.location;
             cmd.Parameters.Add("@ts_number", MySqlDbType.Text).Value = work.ts_number;
             cmd.Parameters.Add("@ts_amount", MySqlDbType.Text).Value = work.ts_amount;
+            cmd.Parameters.Add("@work_assigned", MySqlDbType.Text).Value = "No";
             cmd.Parameters.Add("@type_id", MySqlDbType.Text).Value = work.type_id;
 
             try
             {
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Work Has been Added", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             catch (MySqlException ex)
             {
@@ -154,6 +157,105 @@ namespace ContractManagementSystem.Classes
             {
                 MessageBox.Show(ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        public static void AddWorkAssigned(WorkAssigned wrk)
+        {
+            string sql = "INSERT INTO work_assigned VALUES(NULL, @work_id, @contractor_id, @ca_cost, @assigned_date, @year)";
+
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add("@work_id", MySqlDbType.VarChar).Value = wrk.work_id;
+            cmd.Parameters.Add("@contractor_id", MySqlDbType.VarChar).Value = wrk.contractor_id;
+            cmd.Parameters.Add("@ca_cost", MySqlDbType.VarChar).Value = wrk.ca_cost;
+            cmd.Parameters.Add("@assigned_date", MySqlDbType.VarChar).Value = wrk.assigned_date;
+            cmd.Parameters.Add("@year", MySqlDbType.VarChar).Value = wrk.year;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Work Has been assigned","Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            conn.Close();
+        }
+        public static void editWork(string work_id)
+        {
+            string sql = "UPDATE works SET work_assigned = @work_assigned WHERE id = @work_id";
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add("@work_assigned", MySqlDbType.Text).Value = "Yes";
+            cmd.Parameters.Add("@work_id", MySqlDbType.Text).Value = work_id;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+
+        } 
+
+        public static string GetWorkAssignedId()
+        {
+            string sql = "SELECT MAX(id) FROM work_assigned";
+
+            MySqlConnection conn = GetConnection();
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.CommandType = CommandType.Text;
+
+            MySqlDataReader reader = cmd.ExecuteReader();
+            string id = "";
+            try
+            {
+                while (reader.Read())
+                {
+                    id = reader[0].ToString();
+                }
+                 
+            }
+            catch(MySqlException ex)
+            {
+                id = "";
+                MessageBox.Show(ex.Message);
+            }
+            return id;
+        }
+        public static void addCalculation(string work_assigned_id, string ca_cost)
+        {
+            string sql = "INSERT INTO calculations VALUES (NULL, @work_assigned_id, 0, 0, @ca_cost, 0)";
+            MySqlConnection conn = GetConnection();
+
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.Add("@work_assigned_id", MySqlDbType.Text).Value = work_assigned_id;
+            cmd.Parameters.Add("@ca_cost", MySqlDbType.Text).Value = ca_cost;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
         }
 
     }

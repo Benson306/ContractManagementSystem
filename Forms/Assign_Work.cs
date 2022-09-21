@@ -1,4 +1,5 @@
 ﻿using ContractManagementSystem.Classes;
+using ContractManagementSystem.UserControls;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace ContractManagementSystem.Forms
         public string title { get; set; }
         public string ts_number { get; set; }
         public string ts_amount { get; set; }
+
         public Assign_Work()
         {
             InitializeComponent();
@@ -119,6 +121,16 @@ namespace ContractManagementSystem.Forms
                 MessageBox.Show("Field Cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            WorkAssigned wa = new WorkAssigned(workId, contractorId, txtCaCost.Text, dateTimeAssignDate.Text, cmbYear.Text);
+            DbContract.AddWorkAssigned(wa);
+            string work_assigned_id = DbContract.GetWorkAssignedId();
+            DbContract.addCalculation(work_assigned_id, txtCaCost.Text);
+
+            UC_Work wrk = new UC_Work();
+            wrk.Display();
+
+            DbContract.editWork(workId);
+            this.Close();
 
         }
     }

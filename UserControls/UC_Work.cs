@@ -14,20 +14,27 @@ namespace ContractManagementSystem.UserControls
 {
     public partial class UC_Work : UserControl
     {
+        Form_AddWork form;
         public UC_Work()
         {
             InitializeComponent();
+            form = new Form_AddWork(this);
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form_AddWork wrk = new Form_AddWork();
-            wrk.ShowDialog();
+            form.ShowDialog();
+        }
+
+        public void Display()
+        {
+            DbContract.DisplayAndSearchWork("SELECT id, title, location, ts_number, ts_amount, work_assigned FROM works;", dataGridView1);
         }
 
         private void UC_Work_Load(object sender, EventArgs e)
         {
-            DbContract.DisplayAndSearchWork("SELECT id, title, location, ts_number, ts_amount FROM works;", dataGridView1);
+            Display();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
