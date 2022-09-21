@@ -157,6 +157,7 @@ namespace ContractManagementSystem.Classes
             {
                 MessageBox.Show(ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            conn.Close();
         }
 
         public static void AddWorkAssigned(WorkAssigned wrk)
@@ -233,6 +234,7 @@ namespace ContractManagementSystem.Classes
                 MessageBox.Show(ex.Message);
             }
             return id;
+            conn.Close();
         }
         public static void addCalculation(string work_assigned_id, string ca_cost)
         {
@@ -254,6 +256,7 @@ namespace ContractManagementSystem.Classes
             {
                 MessageBox.Show(ex.Message);
             }
+            conn.Close();
 
 
         }

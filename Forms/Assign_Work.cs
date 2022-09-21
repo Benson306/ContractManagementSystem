@@ -19,7 +19,6 @@ namespace ContractManagementSystem.Forms
         public string title { get; set; }
         public string ts_number { get; set; }
         public string ts_amount { get; set; }
-
         public Assign_Work()
         {
             InitializeComponent();
@@ -43,6 +42,7 @@ namespace ContractManagementSystem.Forms
                 {
                     lblAddress.Text = reader["address"].ToString();
                 }
+                conn.Close();
             }
             catch (MySqlException ex)
             {
@@ -77,6 +77,7 @@ namespace ContractManagementSystem.Forms
                     cmbContractors.ValueMember = reader["id"].ToString();
                     cmbContractors.DisplayMember = reader["full_name"].ToString();
                 }
+                conn.Close();
             }
             catch (MySqlException ex)
             {
@@ -107,11 +108,13 @@ namespace ContractManagementSystem.Forms
                 {
                     contractorId = reader["id"].ToString();
                 }
+                conn.Close();
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            
         }
 
         private void btnSaveAssignedWork_Click(object sender, EventArgs e)
@@ -124,13 +127,10 @@ namespace ContractManagementSystem.Forms
             WorkAssigned wa = new WorkAssigned(workId, contractorId, txtCaCost.Text, dateTimeAssignDate.Text, cmbYear.Text);
             DbContract.AddWorkAssigned(wa);
             string work_assigned_id = DbContract.GetWorkAssignedId();
-            DbContract.addCalculation(work_assigned_id, txtCaCost.Text);
-
-            UC_Work wrk = new UC_Work();
-            wrk.Display();
 
             DbContract.editWork(workId);
             this.Close();
+
 
         }
     }

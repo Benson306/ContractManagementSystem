@@ -19,7 +19,6 @@ namespace ContractManagementSystem.UserControls
         {
             InitializeComponent();
             form = new Form_AddWork(this);
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,7 +28,12 @@ namespace ContractManagementSystem.UserControls
 
         public void Display()
         {
-            DbContract.DisplayAndSearchWork("SELECT id, title, location, ts_number, ts_amount, work_assigned FROM works;", dataGridView1);
+            
+            DbContract.DisplayAndSearchWork("SELECT id, title, location, ts_number, ts_amount, work_assigned FROM works WHERE work_assigned = 'No';", dataGridView1);
+        }
+        public void Work()
+        {
+            MessageBox.Show("work");
         }
 
         private void UC_Work_Load(object sender, EventArgs e)
@@ -48,7 +52,7 @@ namespace ContractManagementSystem.UserControls
         {
             if(workId != null)
             {
-                using(Assign_Work wrk = new Assign_Work())
+                using (Assign_Work wrk = new Assign_Work())
                 {
                     wrk.workId = workId;
                     wrk.title = title;
