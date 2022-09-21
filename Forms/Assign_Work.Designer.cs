@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSaveWork = new System.Windows.Forms.Button();
+            this.btnSaveAssignedWork = new System.Windows.Forms.Button();
             this.btnCancelAssign = new System.Windows.Forms.Button();
             this.cmbYear = new System.Windows.Forms.ComboBox();
-            this.txtTsAmount = new System.Windows.Forms.TextBox();
+            this.txtCaCost = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,7 +39,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.lblTsNumber = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbContractors = new System.Windows.Forms.ComboBox();
@@ -47,22 +46,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
+            this.dateTimeAssignDate = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
-            // btnSaveWork
+            // btnSaveAssignedWork
             // 
-            this.btnSaveWork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnSaveWork.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnSaveWork.FlatAppearance.BorderSize = 0;
-            this.btnSaveWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveWork.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSaveWork.ForeColor = System.Drawing.Color.Black;
-            this.btnSaveWork.Location = new System.Drawing.Point(447, 306);
-            this.btnSaveWork.Name = "btnSaveWork";
-            this.btnSaveWork.Size = new System.Drawing.Size(93, 43);
-            this.btnSaveWork.TabIndex = 19;
-            this.btnSaveWork.Text = "Save";
-            this.btnSaveWork.UseVisualStyleBackColor = false;
+            this.btnSaveAssignedWork.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSaveAssignedWork.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnSaveAssignedWork.FlatAppearance.BorderSize = 0;
+            this.btnSaveAssignedWork.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveAssignedWork.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSaveAssignedWork.ForeColor = System.Drawing.Color.Black;
+            this.btnSaveAssignedWork.Location = new System.Drawing.Point(447, 306);
+            this.btnSaveAssignedWork.Name = "btnSaveAssignedWork";
+            this.btnSaveAssignedWork.Size = new System.Drawing.Size(93, 43);
+            this.btnSaveAssignedWork.TabIndex = 19;
+            this.btnSaveAssignedWork.Text = "Save";
+            this.btnSaveAssignedWork.UseVisualStyleBackColor = false;
+            this.btnSaveAssignedWork.Click += new System.EventHandler(this.btnSaveAssignedWork_Click);
             // 
             // btnCancelAssign
             // 
@@ -88,13 +89,13 @@
             this.cmbYear.Size = new System.Drawing.Size(163, 28);
             this.cmbYear.TabIndex = 18;
             // 
-            // txtTsAmount
+            // txtCaCost
             // 
-            this.txtTsAmount.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTsAmount.Location = new System.Drawing.Point(157, 215);
-            this.txtTsAmount.Name = "txtTsAmount";
-            this.txtTsAmount.Size = new System.Drawing.Size(163, 27);
-            this.txtTsAmount.TabIndex = 17;
+            this.txtCaCost.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtCaCost.Location = new System.Drawing.Point(157, 215);
+            this.txtCaCost.Name = "txtCaCost";
+            this.txtCaCost.Size = new System.Drawing.Size(163, 27);
+            this.txtCaCost.TabIndex = 17;
             // 
             // label6
             // 
@@ -176,21 +177,13 @@
             this.lblTsNumber.TabIndex = 22;
             this.lblTsNumber.Text = "label3";
             // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(432, 215);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(129, 27);
-            this.textBox1.TabIndex = 24;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(335, 218);
+            this.label8.Location = new System.Drawing.Point(344, 222);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 20);
             this.label8.TabIndex = 23;
@@ -216,12 +209,13 @@
             this.cmbContractors.Size = new System.Drawing.Size(404, 23);
             this.cmbContractors.TabIndex = 26;
             this.cmbContractors.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbContractors.Leave += new System.EventHandler(this.cmbContractors_Leave);
             // 
             // lblTsAmount
             // 
             this.lblTsAmount.AutoSize = true;
             this.lblTsAmount.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblTsAmount.Location = new System.Drawing.Point(432, 128);
+            this.lblTsAmount.Location = new System.Drawing.Point(447, 128);
             this.lblTsAmount.Name = "lblTsAmount";
             this.lblTsAmount.Size = new System.Drawing.Size(45, 19);
             this.lblTsAmount.TabIndex = 28;
@@ -233,7 +227,7 @@
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(350, 128);
+            this.label7.Location = new System.Drawing.Point(350, 126);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(85, 20);
             this.label7.TabIndex = 27;
@@ -260,25 +254,34 @@
             this.lblAddress.Size = new System.Drawing.Size(0, 19);
             this.lblAddress.TabIndex = 30;
             // 
+            // dateTimeAssignDate
+            // 
+            this.dateTimeAssignDate.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.dateTimeAssignDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimeAssignDate.Location = new System.Drawing.Point(441, 217);
+            this.dateTimeAssignDate.Name = "dateTimeAssignDate";
+            this.dateTimeAssignDate.Size = new System.Drawing.Size(129, 27);
+            this.dateTimeAssignDate.TabIndex = 31;
+            // 
             // Assign_Work
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(587, 383);
+            this.Controls.Add(this.dateTimeAssignDate);
             this.Controls.Add(this.lblAddress);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblTsAmount);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbContractors);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblTsNumber);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.btnSaveWork);
+            this.Controls.Add(this.btnSaveAssignedWork);
             this.Controls.Add(this.btnCancelAssign);
             this.Controls.Add(this.cmbYear);
-            this.Controls.Add(this.txtTsAmount);
+            this.Controls.Add(this.txtCaCost);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -295,10 +298,10 @@
 
         #endregion
 
-        private Button btnSaveWork;
+        private Button btnSaveAssignedWork;
         private Button btnCancelAssign;
         private ComboBox cmbYear;
-        private TextBox txtTsAmount;
+        private TextBox txtCaCost;
         private Label label6;
         private Label label5;
         private Label label4;
@@ -306,7 +309,6 @@
         private Label label1;
         private Label lblTitle;
         private Label lblTsNumber;
-        private TextBox textBox1;
         private Label label8;
         private Label label9;
         private ComboBox cmbContractors;
@@ -314,5 +316,6 @@
         private Label label7;
         private Label label3;
         private Label lblAddress;
+        private DateTimePicker dateTimeAssignDate;
     }
 }

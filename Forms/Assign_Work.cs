@@ -14,9 +14,9 @@ namespace ContractManagementSystem.Forms
 {
     public partial class Assign_Work : Form
     {
-        public string workId { get; set; } 
+        public string workId { get; set; }
         public string title { get; set; }
-        public string ts_number {get; set;}
+        public string ts_number { get; set; }
         public string ts_amount { get; set; }
         public Assign_Work()
         {
@@ -28,7 +28,7 @@ namespace ContractManagementSystem.Forms
             try
             {
 
-                string sql = "SELECT address FROM contractors WHERE full_name = '"+cmbContractors.SelectedItem.ToString()+"'";
+                string sql = "SELECT address FROM contractors WHERE full_name = '" + cmbContractors.SelectedItem.ToString() + "'";
                 MySqlConnection conn = DbContract.GetConnection();
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -76,7 +76,7 @@ namespace ContractManagementSystem.Forms
                     cmbContractors.DisplayMember = reader["full_name"].ToString();
                 }
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -85,6 +85,41 @@ namespace ContractManagementSystem.Forms
         private void btnCancelAssign_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        string contractorId;
+        private void cmbContractors_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+
+                string sql = "SELECT id FROM contractors WHERE full_name = '" + cmbContractors.SelectedItem.ToString() + "'";
+                MySqlConnection conn = DbContract.GetConnection();
+
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+                cmd.CommandType = CommandType.Text;
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    contractorId = reader["id"].ToString();
+                }
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnSaveAssignedWork_Click(object sender, EventArgs e)
+        {
+            if(cmbContractors.Text.Trim().Length < 1 || txtCaCost.Text.Trim().Length < 1 || cmbYear.Text.Trim().Length < 1 || dateTimeAssignDate.Text.Trim().Length < 1)
+            {
+                MessageBox.Show("Field Cannot be empty", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
         }
     }
 }
