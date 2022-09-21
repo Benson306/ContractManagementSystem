@@ -1,4 +1,5 @@
-﻿using ContractManagementSystem.UserControls;
+﻿using ContractManagementSystem.Classes;
+using ContractManagementSystem.UserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

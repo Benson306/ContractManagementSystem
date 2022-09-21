@@ -8,7 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContractManagementSystem
+namespace ContractManagementSystem.Classes
 {
     internal class DbContract
     {
@@ -23,7 +23,7 @@ namespace ContractManagementSystem
             }
             catch (MySqlException ex)
             {
-                MessageBox.Show(ex.Message , "Error" , MessageBoxButtons.OK , MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return conn;
         }
@@ -47,7 +47,7 @@ namespace ContractManagementSystem
                 LoginInfo.userName = usr.username;
                 Form1 frm = new Form1();
                 frm.Hide();
-                using(Dashboard ds = new Dashboard())
+                using (Dashboard ds = new Dashboard())
                 {
                     ds.ShowDialog();
                 }
@@ -115,9 +115,9 @@ namespace ContractManagementSystem
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Contractor Has been Added","Information",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Contractor Has been Added", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -141,23 +141,23 @@ namespace ContractManagementSystem
         {
             string sql = "DELETE FROM contractors WHERE id = @id";
             MySqlConnection conn = GetConnection();
-            MySqlCommand cmd = new MySqlCommand(sql,conn);
+            MySqlCommand cmd = new MySqlCommand(sql, conn);
             cmd.CommandType = CommandType.Text;
-            cmd.Parameters.Add("id",MySqlDbType.VarChar).Value = id;
+            cmd.Parameters.Add("id", MySqlDbType.VarChar).Value = id;
 
             try
             {
                 cmd.ExecuteNonQuery();
-                MessageBox.Show("Contractor Deleted","Succes",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Contractor Deleted", "Succes", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch(MySqlException ex)
+            catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
     }
-    
 
-    
+
+
 }

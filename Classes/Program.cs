@@ -1,4 +1,4 @@
-namespace ContractManagementSystem
+namespace ContractManagementSystem.Classes
 {
     internal static class Program
     {
