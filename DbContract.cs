@@ -137,6 +137,25 @@ namespace ContractManagementSystem
             conn.Close();
         }
 
+        public static void DeleteContractor(string id)
+        {
+            string sql = "DELETE FROM contractors WHERE id = @id";
+            MySqlConnection conn = GetConnection();
+            MySqlCommand cmd = new MySqlCommand(sql,conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("id",MySqlDbType.VarChar).Value = id;
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Contractor Deleted","Succes",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
     }
     
 
