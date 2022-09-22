@@ -61,7 +61,8 @@ namespace ContractManagementSystem
 
         private void guna2Button7_Click(object sender, EventArgs e)
         {
-
+            UC_Users users = new UC_Users();
+            addUserControls(users);
         }
 
         private void btnWorks_Click(object sender, EventArgs e)

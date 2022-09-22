@@ -373,11 +373,11 @@
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(726, 3);
+            this.label3.Location = new System.Drawing.Point(623, 3);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(193, 15);
+            this.label3.Size = new System.Drawing.Size(290, 15);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Copyright 2022. All Rights Reserved";
+            this.label3.Text = "Copyright 2022. KimTech Systems .All Rights Reserved";
             // 
             // panel3
             // 
