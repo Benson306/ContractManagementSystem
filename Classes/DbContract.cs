@@ -162,7 +162,7 @@ namespace ContractManagementSystem.Classes
 
         public static void AddWorkAssigned(WorkAssigned wrk)
         {
-            string sql = "INSERT INTO work_assigned VALUES(NULL, @work_id, @contractor_id, @ca_cost, @assigned_date, @year)";
+            string sql = "INSERT INTO work_assigned VALUES(NULL, @work_id, @contractor_id, @ca_cost, @assigned_date, @year, @is_completed)";
 
             MySqlConnection conn = GetConnection();
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -173,6 +173,7 @@ namespace ContractManagementSystem.Classes
             cmd.Parameters.Add("@ca_cost", MySqlDbType.VarChar).Value = wrk.ca_cost;
             cmd.Parameters.Add("@assigned_date", MySqlDbType.VarChar).Value = wrk.assigned_date;
             cmd.Parameters.Add("@year", MySqlDbType.VarChar).Value = wrk.year;
+            cmd.Parameters.Add("@is_completed", MySqlDbType.VarChar).Value = "No";
 
             try
             {
