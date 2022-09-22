@@ -47,7 +47,7 @@ namespace ContractManagementSystem
 
         private void btnJobs_Click(object sender, EventArgs e)
         {
-            UC_Work work = new UC_Work();
+            UC_AssignedWork work = new UC_AssignedWork();
             addUserControls(work);
         }
 
@@ -62,6 +62,12 @@ namespace ContractManagementSystem
         private void guna2Button7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnWorks_Click(object sender, EventArgs e)
+        {
+            UC_Work work = new UC_Work();
+            addUserControls(work);
         }
     }
 }

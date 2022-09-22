@@ -186,6 +186,7 @@
             this.btnWorks.TabIndex = 5;
             this.btnWorks.Text = "     Manage Works";
             this.btnWorks.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnWorks.Click += new System.EventHandler(this.btnWorks_Click);
             // 
             // btnContrators
             // 
