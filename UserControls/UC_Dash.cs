@@ -1,4 +1,6 @@
 ﻿using ContractManagementSystem.Classes;
+using ContractManagementSystem.Forms;
+using Microsoft.VisualBasic.ApplicationServices;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -53,11 +55,11 @@ namespace ContractManagementSystem.UserControls
             
         }
 
-        string username, email, password;
+        string userId, username, email, password;
 
         public void login(string usr)
         {
-            string sql = "SELECT email,password FROM users WHERE username = @username";
+            string sql = "SELECT id, username, email, password FROM users WHERE username = @username";
 
             MySqlConnection conn = DbContract.GetConnection();
 
@@ -70,10 +72,25 @@ namespace ContractManagementSystem.UserControls
 
             while(reader.Read())
             {
-               email = reader[0].ToString();
-               password = reader[1].ToString();
+                userId = reader[0].ToString();
+                username = reader[1].ToString();
+                email = reader[2].ToString();
+               password = reader[3].ToString();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (Form_EditUsers frm = new Form_EditUsers())
+            {
+                frm.userId = userId;
+                frm.username = username;
+                frm.email = email;
+                frm.password = password;
+                frm.ShowDialog();
+            }
+        }
+
         private void UC_Dash_Load(object sender, EventArgs e)
         {
             username = LoginInfo.userName;

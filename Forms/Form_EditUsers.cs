@@ -112,7 +112,7 @@ namespace ContractManagementSystem.Forms
                 return;
             }
             updateUser();
-            userId = null;
+            //userId = null;
         }
     }
 }
