@@ -1,6 +1,6 @@
 ﻿namespace ContractManagementSystem
 {
-    partial class Dashboard
+    partial class Form_Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSettings = new Guna.UI2.WinForms.Guna2Button();
             this.btnReports = new Guna.UI2.WinForms.Guna2Button();
@@ -44,14 +44,13 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblUser = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -328,32 +327,21 @@
             // 
             // lblUser
             // 
-            this.lblUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUser.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.lblUser.AutoSize = true;
             this.lblUser.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblUser.Location = new System.Drawing.Point(808, 2);
+            this.lblUser.Location = new System.Drawing.Point(796, 2);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(76, 30);
             this.lblUser.TabIndex = 3;
             this.lblUser.Text = "label2";
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(890, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(33, 25);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(704, 2);
+            this.label2.Location = new System.Drawing.Point(692, 2);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(109, 30);
             this.label2.TabIndex = 5;
@@ -361,9 +349,10 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(261, 638);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(923, 23);
@@ -382,8 +371,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.lblTime);
-            this.panel3.Controls.Add(this.pictureBox2);
             this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.lblUser);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -392,7 +381,20 @@
             this.panel3.Size = new System.Drawing.Size(923, 35);
             this.panel3.TabIndex = 7;
             // 
-            // Dashboard
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(878, 2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(42, 32);
+            this.button1.TabIndex = 6;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // Form_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -402,7 +404,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.panel1);
-            this.Name = "Dashboard";
+            this.Name = "Form_Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -410,7 +412,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -435,10 +436,10 @@
         private Label lblTime;
         private System.Windows.Forms.Timer timer1;
         private Label lblUser;
-        private PictureBox pictureBox2;
         private Label label2;
         private Panel panel2;
         private Label label3;
         private Panel panel3;
+        private Button button1;
     }
 }

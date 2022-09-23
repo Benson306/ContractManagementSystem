@@ -1,6 +1,6 @@
 ﻿namespace ContractManagementSystem.Forms
 {
-    partial class Assign_Work
+    partial class Form_Assign_Work
     {
         /// <summary>
         /// Required designer variable.

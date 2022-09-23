@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace ContractManagementSystem
 {
-    public partial class Dashboard : Form
+    public partial class Form_Dashboard : Form
     {
-        public Dashboard()
+        public Form_Dashboard()
         {
             InitializeComponent();
             UC_Dash dash = new UC_Dash();
@@ -69,6 +69,12 @@ namespace ContractManagementSystem
         {
             UC_Work work = new UC_Work();
             addUserControls(work);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginInfo.userName = null;
         }
     }
 }

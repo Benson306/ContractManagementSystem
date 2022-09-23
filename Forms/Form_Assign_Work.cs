@@ -13,13 +13,13 @@ using System.Windows.Forms;
 
 namespace ContractManagementSystem.Forms
 {
-    public partial class Assign_Work : Form
+    public partial class Form_Assign_Work : Form
     {
         public string workId { get; set; }
         public string title { get; set; }
         public string ts_number { get; set; }
         public string ts_amount { get; set; }
-        public Assign_Work()
+        public Form_Assign_Work()
         {
             InitializeComponent();
         }

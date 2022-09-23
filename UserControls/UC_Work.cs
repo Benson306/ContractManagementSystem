@@ -52,7 +52,7 @@ namespace ContractManagementSystem.UserControls
         {
             if(workId != null)
             {
-                using (Assign_Work wrk = new Assign_Work())
+                using (Form_Assign_Work wrk = new Form_Assign_Work())
                 {
                     wrk.workId = workId;
                     wrk.title = title;
