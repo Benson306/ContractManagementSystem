@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractManagementSystem", "ContractManagementSystem.csproj", "{8FD6A0BB-D93E-4C46-971E-1568FF91B59D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContractManagementSystem", "ContractManagementSystem.csproj", "{8FD6A0BB-D93E-4C46-971E-1568FF91B59D}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ContractManagementSys", "..\ContractManagementSys\ContractManagementSys.vdproj", "{12B464A9-F9CB-4945-9606-FA6A0BD2F107}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,8 @@ Global
 		{8FD6A0BB-D93E-4C46-971E-1568FF91B59D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8FD6A0BB-D93E-4C46-971E-1568FF91B59D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8FD6A0BB-D93E-4C46-971E-1568FF91B59D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12B464A9-F9CB-4945-9606-FA6A0BD2F107}.Debug|Any CPU.ActiveCfg = Debug
+		{12B464A9-F9CB-4945-9606-FA6A0BD2F107}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

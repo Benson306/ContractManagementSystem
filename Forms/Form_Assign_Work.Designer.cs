@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Assign_Work));
             this.btnSaveAssignedWork = new System.Windows.Forms.Button();
             this.btnCancelAssign = new System.Windows.Forms.Button();
             this.cmbYear = new System.Windows.Forms.ComboBox();
@@ -263,7 +264,7 @@
             this.dateTimeAssignDate.Size = new System.Drawing.Size(129, 27);
             this.dateTimeAssignDate.TabIndex = 31;
             // 
-            // Assign_Work
+            // Form_Assign_Work
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -287,7 +288,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Assign_Work";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "Form_Assign_Work";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Assign_Work";
             this.Load += new System.EventHandler(this.Assign_Work_Load);
