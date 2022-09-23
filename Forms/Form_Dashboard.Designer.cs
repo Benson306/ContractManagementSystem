@@ -57,7 +57,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panel1.Controls.Add(this.btnSettings);
             this.panel1.Controls.Add(this.btnReports);
             this.panel1.Controls.Add(this.btnAnalytics);
@@ -75,12 +75,12 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnSettings.BackColor = System.Drawing.Color.Transparent;
             this.btnSettings.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnSettings.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnSettings.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSettings.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnSettings.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnSettings.CheckedState.ForeColor = System.Drawing.Color.White;
             this.btnSettings.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnSettings.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -89,7 +89,7 @@
             this.btnSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnSettings.FillColor = System.Drawing.Color.Transparent;
             this.btnSettings.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSettings.ForeColor = System.Drawing.Color.Black;
+            this.btnSettings.ForeColor = System.Drawing.Color.White;
             this.btnSettings.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSettings.Image = ((System.Drawing.Image)(resources.GetObject("btnSettings.Image")));
             this.btnSettings.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -104,12 +104,12 @@
             // 
             // btnReports
             // 
-            this.btnReports.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnReports.BackColor = System.Drawing.Color.Transparent;
             this.btnReports.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnReports.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnReports.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnReports.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnReports.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnReports.CheckedState.ForeColor = System.Drawing.Color.White;
             this.btnReports.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnReports.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnReports.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -118,7 +118,7 @@
             this.btnReports.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnReports.FillColor = System.Drawing.Color.Transparent;
             this.btnReports.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnReports.ForeColor = System.Drawing.Color.Black;
+            this.btnReports.ForeColor = System.Drawing.Color.White;
             this.btnReports.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnReports.Image = ((System.Drawing.Image)(resources.GetObject("btnReports.Image")));
             this.btnReports.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -132,12 +132,12 @@
             // 
             // btnAnalytics
             // 
-            this.btnAnalytics.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAnalytics.BackColor = System.Drawing.Color.Transparent;
             this.btnAnalytics.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnAnalytics.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnAnalytics.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnAnalytics.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnAnalytics.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnAnalytics.CheckedState.ForeColor = System.Drawing.Color.White;
             this.btnAnalytics.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnAnalytics.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnAnalytics.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -146,7 +146,7 @@
             this.btnAnalytics.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnAnalytics.FillColor = System.Drawing.Color.Transparent;
             this.btnAnalytics.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAnalytics.ForeColor = System.Drawing.Color.Black;
+            this.btnAnalytics.ForeColor = System.Drawing.Color.White;
             this.btnAnalytics.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnAnalytics.Image = ((System.Drawing.Image)(resources.GetObject("btnAnalytics.Image")));
             this.btnAnalytics.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -160,12 +160,12 @@
             // 
             // btnWorks
             // 
-            this.btnWorks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnWorks.BackColor = System.Drawing.Color.Transparent;
             this.btnWorks.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnWorks.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnWorks.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnWorks.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnWorks.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnWorks.CheckedState.ForeColor = System.Drawing.Color.White;
             this.btnWorks.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnWorks.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnWorks.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -174,7 +174,7 @@
             this.btnWorks.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnWorks.FillColor = System.Drawing.Color.Transparent;
             this.btnWorks.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnWorks.ForeColor = System.Drawing.Color.Black;
+            this.btnWorks.ForeColor = System.Drawing.Color.White;
             this.btnWorks.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnWorks.Image = ((System.Drawing.Image)(resources.GetObject("btnWorks.Image")));
             this.btnWorks.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -189,12 +189,12 @@
             // 
             // btnContrators
             // 
-            this.btnContrators.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnContrators.BackColor = System.Drawing.Color.Transparent;
             this.btnContrators.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnContrators.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnContrators.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnContrators.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnContrators.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnContrators.CheckedState.ForeColor = System.Drawing.Color.White;
             this.btnContrators.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnContrators.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnContrators.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -203,7 +203,7 @@
             this.btnContrators.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnContrators.FillColor = System.Drawing.Color.Transparent;
             this.btnContrators.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnContrators.ForeColor = System.Drawing.Color.Black;
+            this.btnContrators.ForeColor = System.Drawing.Color.White;
             this.btnContrators.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnContrators.Image = ((System.Drawing.Image)(resources.GetObject("btnContrators.Image")));
             this.btnContrators.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -218,12 +218,12 @@
             // 
             // btnJobs
             // 
-            this.btnJobs.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnJobs.BackColor = System.Drawing.Color.Transparent;
             this.btnJobs.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnJobs.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnJobs.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnJobs.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnJobs.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnJobs.CheckedState.ForeColor = System.Drawing.Color.White;
             this.btnJobs.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnJobs.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnJobs.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -232,7 +232,7 @@
             this.btnJobs.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnJobs.FillColor = System.Drawing.Color.Transparent;
             this.btnJobs.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnJobs.ForeColor = System.Drawing.Color.Black;
+            this.btnJobs.ForeColor = System.Drawing.Color.White;
             this.btnJobs.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnJobs.Image = ((System.Drawing.Image)(resources.GetObject("btnJobs.Image")));
             this.btnJobs.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -252,6 +252,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(21, 109);
             this.label1.Name = "label1";
             this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -271,13 +272,13 @@
             // 
             // btnDashboard
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
             this.btnDashboard.ButtonMode = Guna.UI2.WinForms.Enums.ButtonMode.RadioButton;
             this.btnDashboard.Checked = true;
             this.btnDashboard.CheckedState.BorderColor = System.Drawing.Color.Transparent;
             this.btnDashboard.CheckedState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDashboard.CheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.btnDashboard.CheckedState.ForeColor = System.Drawing.Color.Black;
+            this.btnDashboard.CheckedState.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.CustomBorderColor = System.Drawing.Color.Transparent;
             this.btnDashboard.CustomBorderThickness = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnDashboard.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
@@ -286,7 +287,7 @@
             this.btnDashboard.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDashboard.FillColor = System.Drawing.Color.Transparent;
             this.btnDashboard.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnDashboard.ForeColor = System.Drawing.Color.Black;
+            this.btnDashboard.ForeColor = System.Drawing.Color.White;
             this.btnDashboard.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnDashboard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashboard.Image")));
             this.btnDashboard.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;

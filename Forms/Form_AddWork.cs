@@ -28,7 +28,6 @@ namespace ContractManagementSystem
         private void Form_AddWork_Load(object sender, EventArgs e)
         {
             fillCombo();
-
         }
         public void fillCombo()
         {
@@ -117,6 +116,11 @@ namespace ContractManagementSystem
             Work work = new Work(txtWorkTitle.Text, txtLocation.Text, txtTsNumber.Text, txtTsAmount.Text, type_id);
             DbContract.addWork(work);
             _parent.Display();
+
+            cmType.DataSource = null;
+
+           txtWorkTitle.Text= txtLocation.Text= txtTsNumber.Text= txtTsAmount.Text = String.Empty;
+
             this.Close();
 
         }
