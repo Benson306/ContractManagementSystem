@@ -15,7 +15,7 @@ namespace ContractManagementSystem.Classes
     {
         public static MySqlConnection GetConnection()
         {
-            string sql = "datasource=sql8.freemysqlhosting.net;port=3306;username=sql8521009;password=Q9gQ1Ha7Ak;database=sql8521009";
+            string sql = "datasource=localhost;port=3306;username=root;password=;database=cms";
             MySqlConnection conn = new MySqlConnection(sql);
 
             try
